@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/homework/collections/pom.xml" />
+        <option value="$PROJECT_DIR$/homework/input-output/pom.xml" />
+        <option value="$PROJECT_DIR$/homework/object-oriented-programming/pom.xml" />
+        <option value="$PROJECT_DIR$/exercises/algorithms/pom.xml" />
+        <option value="$PROJECT_DIR$/exercises/flow-control/pom.xml" />
+        <option value="$PROJECT_DIR$/exercises/input-output/pom.xml" />
+        <option value="$PROJECT_DIR$/exercises/java-exceptions/pom.xml" />
+        <option value="$PROJECT_DIR$/exercises/java-primitives/pom.xml" />
+        <option value="$PROJECT_DIR$/exercises/java-collections/pom.xml" />
+        <option value="$PROJECT_DIR$/exercises/test-driven-development/pom.xml" />
+        <option value="$PROJECT_DIR$/exercises/client-server-architecture/pom.xml" />
+        <option value="$PROJECT_DIR$/exercises/object-oriented-programming/pom.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_21" default="true" project-jdk-name="21" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/out" />
+  </component>
+</project>

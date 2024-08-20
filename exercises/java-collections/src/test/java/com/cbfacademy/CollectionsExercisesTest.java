@@ -7,10 +7,7 @@ import org.junit.jupiter.api.Test;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
-import java.util.ArrayDeque;
-import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.Stack;
+import java.util.*;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.CoreMatchers.notNullValue;
@@ -107,4 +104,7 @@ public class CollectionsExercisesTest {
                 is("[1, 2, 3, 4, 5, 6][TypeScript, Kotlin, Python, Java, JavaScript, Rust]false")
         );
     }
-}
+
+    }
+
+

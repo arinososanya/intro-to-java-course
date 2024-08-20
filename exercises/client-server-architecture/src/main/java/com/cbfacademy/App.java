@@ -1,3 +1,5 @@
+
+
 package com.cbfacademy;
 
 public class App {
@@ -5,3 +7,5 @@ public class App {
         System.out.println("Hello World!");
     }
 }
+
+// The output should be like html code from the website
