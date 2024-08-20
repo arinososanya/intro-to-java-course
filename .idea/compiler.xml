@@ -7,11 +7,13 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="client-server-architecture" />
+        <module name="object-oriented-programming (2)" />
         <module name="flow-control" />
         <module name="java-collections" />
         <module name="sort" />
         <module name="object-oriented-programming" />
         <module name="cars" />
+        <module name="input-output (2)" />
         <module name="search" />
         <module name="collections" />
         <module name="input-output (1)" />
@@ -23,5 +25,9 @@
         <module name="input-output" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="input-output" target="21" />
+      <module name="object-oriented-programming" target="21" />
+    </bytecodeTargetLevel>
   </component>
 </project>
