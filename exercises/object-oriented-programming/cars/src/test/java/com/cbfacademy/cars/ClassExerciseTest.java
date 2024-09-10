@@ -1,10 +1,10 @@
 package com.cbfacademy.cars;
 
+import org.junit.jupiter.params.provider.Arguments;
+
 import java.util.HashMap;
 import java.util.List;
 import java.util.stream.Stream;
-
-import org.junit.jupiter.params.provider.Arguments;
 
 public abstract class ClassExerciseTest {
     protected static Stream<Arguments> getCarArguments() {
@@ -17,7 +17,7 @@ public abstract class ClassExerciseTest {
                     String colour = (String) map.get("colour");
                     int year = (int) map.get("year");
 
-                    return Arguments.of(new Car(make, model, colour, year), make, model, colour, year);
+                    return Arguments.of (new Car(make, model, colour, year),make, model, colour, year); // Return the Car object
                 });
     }
 

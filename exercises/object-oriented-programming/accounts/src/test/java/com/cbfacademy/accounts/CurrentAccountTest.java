@@ -23,7 +23,7 @@ public class CurrentAccountTest {
     @Test
     @DisplayName("withdraw() method withdraws requested amount within balance")
     public void withdraw_WithdrawsRequestedAmountWithinBalance() {
-        double withdrawnAmount = currentAccount.withdraw(500.0);
+        double withdrawnAmount = currentAccount.withdraw();
         double expectedBalance = 500.0;
 
         assertEquals(500.0, withdrawnAmount, delta);
@@ -33,7 +33,7 @@ public class CurrentAccountTest {
     @Test
     @DisplayName("withdraw() method withdraws requested amount within overdraft")
     public void withdraw_WithdrawsRequestedAmountWithinOverdraft() {
-        double withdrawnAmount = currentAccount.withdraw(1500.0);
+        double withdrawnAmount = currentAccount.withdraw();
         double expectedBalance = -500.0;
 
         assertEquals(1500.0, withdrawnAmount, delta);
@@ -43,7 +43,7 @@ public class CurrentAccountTest {
     @Test
     @DisplayName("withdraw() method ignores requested amount exceeding overdraft")
     public void withdraw_IgnoresRequestedAmountExceedingOverdraft() {
-        double withdrawnAmount = currentAccount.withdraw(2500.0);
+        double withdrawnAmount = currentAccount.withdraw();
 
         assertEquals(0.0, withdrawnAmount, delta);
         assertEquals(defaultBalance, currentAccount.getBalance(), delta);

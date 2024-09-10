@@ -42,4 +42,5 @@ public class Car {
         public String getDetails(){
             return "Car Details" + this.make + this.model + this.colour + this.year; // Returns the car details, including the make, model, colour and year
         }
+
 }
