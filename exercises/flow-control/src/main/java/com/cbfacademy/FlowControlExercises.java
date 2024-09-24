@@ -7,15 +7,28 @@ import java.util.Map;
 public class FlowControlExercises {
 
     public List<String> fizzBuzz(List<Integer> numbers) {
-        // TODO - Implement this method such that
-        //  it creates a list where for each element of the input list ${numbers}
-        //  - if the ${element} is divisible by 3, it adds “Fizz” to the list
-        //  - if the ${element} is divisible by 5, it adds “Buzz” to the list
-        //  - if the ${element} is divisible by both 3 and 5, it adds “FizzBuzz” to the list
-        //  - it adds the element to the list in any other case
-        //  - it returns the constructed list
+        List<String> result = new ArrayList<>();
+        for (int i = 0; i < numbers.size(); i++) {
+
+            if (numbers.get(i) % 3 == 0 && numbers.get(i) % 5 == 0) {
+                result.add("FizzBuzz");
+            } else if (numbers.get(i) % 3 == 0) {
+                result.add("Fizz");
+            } else if (numbers.get(i) % 5 == 0) {
+                result.add("Buzz");
+            } else {
+                result.add(numbers.get(i).toString()); // Double check what this means
+            }
+        }
+        return result;
+    }
+
+
+    public String getName() {
         throw new RuntimeException("Not implemented");
     }
+
+
 
     public String whichMonth(Integer number) {
         // TODO - Implement this method such that
@@ -40,8 +53,9 @@ public class FlowControlExercises {
         //  - it returns the list in reverse order
         throw new RuntimeException("Not implemented");
     }
-
-    public String getName() {
-        return "Flow Control Exercises";
-    }
 }
+
+//    public String getName() {
+//        return "Flow Control Exercises";
+//    }
+//}
