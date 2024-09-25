@@ -12,6 +12,12 @@ public class App {
 
     }
 
+    /**
+     *
+     * @param word1
+     * @param word2
+     * @return
+     */
     public static Boolean areEqual(String word1, String word2) {
         // TODO: Write code to determine whether the input parameters are equal strings (DONE)
         return word1.equals(word2);
@@ -27,6 +33,6 @@ public class App {
 
 // For the formatted String activity above, we did the following:
 // 1. We declare a variable formattedString to hold the final output.
-// 2. We use string concatenation to build the string with placeholders for item, formatted price, and quantity.
+// 2. We use string concatenation to build the string with placeholders for item, formatted price, and quantity. Placeholders are denoted by '%' followed by a conversion character specifying the data type and format.
 // 3. For the price, we use String.format("%.2f", price) within the string to format the double value price as a String with two decimal places and a leading £ symbol. NOTE: The %.2f format specifier ensures two decimal places.
 // We don't use the '%.2d' format because then it won't show decimal places, it shows as an integer but we want 2 decimal places.
