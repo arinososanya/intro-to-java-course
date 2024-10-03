@@ -6,11 +6,11 @@ public class CollectionsExercises {
 
     public LinkedList<Integer> useLinkedList() {
         LinkedList<Integer> myList = new LinkedList<>(); // TODO: create an empty linked list i.e declaring a new list of the type LinkedList
-        myList.add(4); //  - add 4 as the first element of the list
+        myList.addFirst(4); //  - add 4 as the first element of the list
         myList.addAll(Arrays.asList(5, 6, 8, 2, 9)); //   add 5, 6, 8, 2, 9 to the list
         myList.addLast(2); //  - add another 2 as the last element of the list
         myList.add(2, 4); //  - add 4 as the 3rd element of the list
-        System.out.println(myList.element()); //  - invoke the method element() on the list and print the result on the screen
+        System.out.print(myList.element()); //  - invoke the method element() on the list and print the result on the screen
         return myList; //  - return the list
     }
 
@@ -52,8 +52,8 @@ public class CollectionsExercises {
         myMap.put(4, "Java");//  - add {4, Java} entry to the map
         myMap.put(5, "JavaScript");//  - add {5, JavaScript} entry to the map
         myMap.put(6, "Rust");//  - add {6, Rust} entry to the map
-        System.out.println(myMap.keySet()); //  - determine the set of keys from the map and print it on the screen
-        System.out.println(myMap.values());//  - determine the set of values from the map and print it on the screen
+        System.out.print(myMap.keySet()); //  - determine the set of keys from the map and print it on the screen
+        System.out.print(myMap.values());//  - determine the set of values from the map and print it on the screen
         System.out.print(myMap.containsValue("English"));//  - determine whether the map contains "English" as a language and print the result on the screen
         return (HashMap<Integer, String>) myMap.entrySet(); //  - return the map; initially I just put return myMap.entrySet()
     }
