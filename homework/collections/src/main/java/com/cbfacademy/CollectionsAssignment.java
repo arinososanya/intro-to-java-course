@@ -1,8 +1,7 @@
 package com.cbfacademy;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
+import java.util.*;
+import java.util.stream.Stream;
 
 public class CollectionsAssignment {
 
@@ -15,8 +14,39 @@ public class CollectionsAssignment {
      * @param minValue the minimum value to retain
      */
     public static void removeSmallInts(List<Integer> list, int minValue) {
-        // Your solution must traverse the list from last to first element
-        // removing any values less than minValue.
+        /*
+         Your solution must traverse the list from last to first element
+         removing any values less than minValue.
+         Note to self: In this task, it is unnecessary to create a new list. the list parameter is already a reference to an existing List<Integer> object. This means that any modifications made to the list object within the method will directly affect the original list that was passed as an argument.The goal is to modify the existing list (see Test class) by removing elements that are < minValue
+
+        */
+
+        /*
+            My solution:
+            1. Since I know exactly how many times I want to loop through the block of code
+         */
+        for (int i = list.size()-1; i>=0; i--) { // We are starting with the last element in the list, so we want to get the index of this element. To do this, we get the list size - 1.
+            int value = list.get(i); // To access the actual value of the element at index i, we use the .get() method.
+                if (value < minValue){ // 3. Use if statement: as long as values from the list are smaller than minValue, remove the values.
+                    list.remove(i);
+            }
+        }
+
+        /*
+        FOR LOOP BREAKDOWN:
+        1. Set the Initial Value
+        2. Set the Condition
+        3. Increment / Decrement by X after each iteration. That means that in the next iteration, i will be X more or less than its previous value.
+
+        1. Set the Initial Value:
+        int i = list.size() - 1;
+        This line creates a variable named i and sets its initial value to the last index of the list. i is the index value, NOT the actual value of the element.
+
+        2. Set the Condition
+        The condition i >= 0 checks if the current index is still within the bounds of the list (valid indices range from 0 to list.size() - 1).
+
+  */
+
     }
 
     /**
@@ -28,7 +58,22 @@ public class CollectionsAssignment {
      */
     public static boolean containsDuplicates(Collection<Integer> integers) {
         // Your solution must not use any loops.
-        return false;
+        // My approach: Using java streams --> Create a stream, make a distinct stream to have only unique elements. Then count the no. of elements in the new distinct stream and then compare with the original size of the integers collection.
+
+        // 1. Convert to stream
+        Stream<Integer> integerStream = integers.stream(); // creating a new stream from the Collections and storing it
+
+        // 2. Apply distinct()
+        Stream<Integer> distinctStream = integerStream.distinct(); // Creating a distinctStream using distinct() to get a stream containing only unique elements.
+
+        // 3. Count elements: The count method takes a stream and returns the number of elements in that stream as a long value.
+        long distinctCount = distinctStream.count();
+
+        // Compare sizes and return result
+        if(integers.size() != distinctCount){
+            return true;
+        }
+        else return false;
     }
 
     /**
@@ -48,7 +93,27 @@ public class CollectionsAssignment {
      */
     public static ArrayList<Integer> inEither(Collection<Integer> ints1, Collection<Integer> ints2) {
         // This must be done with no loops.
-        return new ArrayList<Integer>();
+        // Store both collections in streams
+        Stream<Integer> intsStream1 = ints1.stream();
+        Stream<Integer> intsStream2 = ints2.stream();
+
+        // Merge them
+       Stream<Integer> mergeStream = Stream.concat(intsStream1, intsStream2);
+
+        // Remove duplicates
+        Stream<Integer> distinctArray = mergeStream.distinct();
+
+        // Use the sorted() stream method to sort the stream
+        Stream<Integer> sortedArray = distinctArray.sorted();
+
+
+        // Create a new ArrayList and initialize it with the elements from the sortedArray stream
+        ArrayList<Integer> result = new ArrayList<>();
+        result.addAll(sortedArray.toList());
+
+        return result;
+
+//        return new ArrayList<Integer>();
     }
 
     /**
