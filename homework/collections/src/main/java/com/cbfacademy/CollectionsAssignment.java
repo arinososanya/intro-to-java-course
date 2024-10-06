@@ -1,6 +1,7 @@
 package com.cbfacademy;
 
 import java.util.*;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class CollectionsAssignment {
@@ -112,8 +113,6 @@ public class CollectionsAssignment {
         result.addAll(sortedArray.toList());
 
         return result;
-
-//        return new ArrayList<Integer>();
     }
 
     /**
@@ -131,8 +130,20 @@ public class CollectionsAssignment {
      */
     public static ArrayList<Integer> inBoth(Collection<Integer> ints1, Collection<Integer> ints2) {
         // This must be done with no loops.
-        return new ArrayList<>();
+        // Note: Since we don't want to modify the original collections, we can use streams.
+
+        // Converting both collections to sets to remove duplicates
+        Set<Integer> set1 = new HashSet<>(ints1);
+        Set<Integer> set2 = new HashSet<>(ints2);
+
+        // Use streams to find common elements, sort them, and collect into an ArrayList
+        return set1.stream()
+                .filter(set2::contains) // This step keeps only the elements from set1 that are also present in set2.
+                .sorted()
+                .collect(Collectors.toCollection(ArrayList::new));
+
     }
+
 
     /**
      * This method returns the String that appears most frequently in the
@@ -150,7 +161,40 @@ public class CollectionsAssignment {
         // your counts to find the largest. You'll need a collection that allows
         // you to store a mapping from Strings to counts.
         // No nested loops or non-enhanced for-loops are allowed.
-        return "";
+
+        // If the input list is empty
+        if (list.isEmpty()){
+            return "";
+            }
+
+        // HashMap will allow me to store a mapping from Strings to counts. String = keys, counts = values
+        HashMap<String, Integer> counts = new HashMap<>();
+
+        // 1. First iterate through the list to count occurrences of each String. Enhanced for loop is used to iterate through elements of arrays and collections.
+        for(String word : list){
+            // Update the count for this word
+            int currentCount = counts.getOrDefault(word, 0);
+
+            // Increment the count and put the word back in the map with the new count
+            counts.put(word, currentCount +1);
+
+            }
+
+
+        // 2. To find the word with the highest count
+        String mostFrequentWord = "";
+        int maxCount = 0;
+
+        // Then iterate through the counts to find the largest. I use Map.Entry to get both the key and values
+        for (Map.Entry<String, Integer> listEntry: counts.entrySet()){
+            if(listEntry.getValue() > maxCount) {
+                maxCount = listEntry.getValue();
+                mostFrequentWord = listEntry.getKey();
+            }
+        }
+
+        return mostFrequentWord;
+
     }
 
     public static String getName() {
